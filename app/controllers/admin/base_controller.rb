@@ -1,6 +1,5 @@
 class Admin::BaseController < ApplicationController
-  prepend_before_action :authenticate_user!
-  prepend_before_action :admin_check
+  prepend_before_action :authenticate_user!, :admin_check
 
   private
     def admin_check
