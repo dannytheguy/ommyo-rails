@@ -7,12 +7,12 @@ class UsersController < ApplicationController
     respond_with(@user)
   end
 
+  def current
+    respond_with(current_user)
+  end
+
   private
     def set_user
-      if params[:id] == 'current'
-        @user = current_user
-      else
-        @user = User.find(params[:id])
-      end
+      @user = User.find(params[:id])
     end
 end

@@ -11,6 +11,7 @@ OmmYo::Application.routes.draw do
       :via => Devise.mappings[:user].sign_out_via
   end
 
+  get 'users/current'
   resources :users, :only => [:show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
