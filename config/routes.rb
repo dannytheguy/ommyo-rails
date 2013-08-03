@@ -1,10 +1,6 @@
 OmmYo::Application.routes.draw do
   resources :omms, :only => [:show, :new, :create]
 
-  namespace :admin do
-    resources :brands
-  end
-
   resources :brands, :only => [:show]
 
   devise_for :users, :skip => [:sessions]
