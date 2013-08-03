@@ -58,3 +58,7 @@ gem 'formtastic',          github: 'justinfrench/formtastic'
 gem 'faraday',             github: 'lostisland/faraday'
 
 gem 'rails-observers',     github: 'rails/rails-observers'
+
+gem 'bootstrap-sass'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
