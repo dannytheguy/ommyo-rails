@@ -43,6 +43,13 @@ GIT
       actionpack (>= 3.0)
 
 GIT
+  remote: git://github.com/lostisland/faraday.git
+  revision: f39b4e664e25ce91c22e670e44289760c65cf0fb
+  specs:
+    faraday (0.9.0.rc5)
+      multipart-post (~> 1.2.0)
+
+GIT
   remote: git://github.com/plataformatec/responders.git
   revision: 6b57da9efb85c79157434a85c1bc34b2b4231aaa
   specs:
@@ -100,8 +107,6 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    faraday (0.8.8)
-      multipart-post (~> 1.2.0)
     has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
@@ -208,6 +213,7 @@ DEPENDENCIES
   activeadmin!
   coffee-rails (~> 4.0.0)
   devise
+  faraday!
   formtastic!
   inherited_resources!
   jquery-rails

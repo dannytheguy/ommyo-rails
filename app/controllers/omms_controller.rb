@@ -14,12 +14,8 @@ class OmmsController < ApplicationController
 
   def create
     @omm = Omm.new(omm_params)
-
-    if @omm.save
-      respond_with(@omm)
-    else
-      respond_with(@omm.errors)
-    end
+    @omm.save
+    respond_with(@omm)
   end
 
   private
@@ -28,6 +24,6 @@ class OmmsController < ApplicationController
     end
 
     def omm_params
-      params.require(:omm).permit(:body)
+      params.require(:omm).permit(:body, :brand_id, :recaptcha_challenge_field, :recaptcha_response_field)
     end
 end
