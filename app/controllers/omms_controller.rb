@@ -18,7 +18,7 @@ class OmmsController < ApplicationController
   end
 
   def create
-    @omm = Omm.new(omm_params)
+    @omm = current_user.omms.build(omm_params)
     @omm.save
     respond_with(@omm)
   end
