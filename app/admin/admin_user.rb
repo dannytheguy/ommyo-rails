@@ -1,6 +1,10 @@
 ActiveAdmin.register AdminUser do
   index do
+    selectable_column
+    id_column
     column :email
+    column :created_at
+    column :updated_at
     default_actions
   end
 
