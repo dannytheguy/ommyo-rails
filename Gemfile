@@ -57,4 +57,4 @@ gem 'formtastic',          github: 'justinfrench/formtastic'
 
 gem 'faraday',             github: 'lostisland/faraday'
 
-gem 'rails-observers'
+gem 'rails-observers',     github: 'rails/rails-observers'
