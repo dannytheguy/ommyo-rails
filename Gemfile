@@ -56,3 +56,5 @@ gem 'activeadmin',         github: 'gregbell/active_admin', branch: 'rails4'
 gem 'formtastic',          github: 'justinfrench/formtastic'
 
 gem 'faraday',             github: 'lostisland/faraday'
+
+gem 'rails-observers'
