@@ -1,4 +1,6 @@
 OmmYo::Application.routes.draw do
+  resources :omms, :only => [:show, :new, :create]
+
   namespace :admin do
     resources :brands
   end

@@ -1,0 +1,21 @@
+<%= form_for(@omm) do |f| %>
+  <% if @omm.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@omm.errors.count, "error") %> prohibited this omm from being saved:</h2>
+
+      <ul>
+      <% @omm.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_field :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
