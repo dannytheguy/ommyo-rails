@@ -3,6 +3,11 @@ class OmmsController < ApplicationController
 
   before_action :set_omm, only: [:show]
 
+  def index
+    @omms = Omm.all
+    respond_with(@omms)
+  end
+
   def show
     respond_with(@omm)
   end
