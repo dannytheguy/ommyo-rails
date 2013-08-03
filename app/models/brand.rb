@@ -1,5 +1,5 @@
 class Brand < ActiveRecord::Base
-  has_many :omms
+  has_many :omms, :dependent => :destroy
 
   validate :recaptcha_public_key_validation
 

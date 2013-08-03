@@ -1,6 +1,8 @@
 class Omm < ActiveRecord::Base
   belongs_to :user
+  validates :user, presence: true
   belongs_to :brand
+  validates :brand, presence: true
 
   attr_accessor :recaptcha_challenge_field
   attr_accessor :recaptcha_response_field
