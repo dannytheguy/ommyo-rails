@@ -48,3 +48,9 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 
 gem 'rabl'
+
+gem 'responders',          github: 'plataformatec/responders'
+gem 'inherited_resources', github: 'josevalim/inherited_resources'
+gem 'ransack',             github: 'ernie/ransack', branch: 'rails-4'
+gem 'activeadmin',         github: 'gregbell/active_admin', branch: 'rails4'
+gem 'formtastic',          github: 'justinfrench/formtastic'
