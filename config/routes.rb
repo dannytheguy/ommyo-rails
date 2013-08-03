@@ -3,6 +3,8 @@ OmmYo::Application.routes.draw do
     resources :brands
   end
 
+  resources :brands, :only => [:show]
+
   devise_for :users, :skip => [:sessions]
   devise_scope :user do
     get 'sign_in' => 'devise/sessions#new', :as => :new_user_session
