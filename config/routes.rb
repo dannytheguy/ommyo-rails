@@ -17,6 +17,4 @@ OmmYo::Application.routes.draw do
 
   get 'users/current'
   resources :users, :only => [:show]
-
-  root 'welcome#index'
 end
