@@ -1,17 +1,38 @@
-<h2>Sign in</h2>
+<div class="span6 offset1">
+  <%= image_tag "ommyo-guest-new-logo.png", id: "ommyo-guest-new-logo" %>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <h1 id="ommyo-guest-new-tagline">Connect to Brands</h1>
+  <p id="ommyo-guest-new-description">OmmYo is your way to communicate with the brands, companies, and products you care about.</p>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <label for="user_email" id="ommyo-guest-new-call2action">Resume the conversation >></span>
+</div>
+<div class="span4">
+  <div id="ommyo-guest-new-form">
+    <h2 id="ommyo-guest-new-form-title">Sign In</h2>
+    <br>
+    <span class="pull-left">New user?</span>
+    <span class="pull-right">Sign up</span>
+    <br>
+    <%= form_for(resource,
+                 as: resource_name,
+                 url: session_path(resource_name),
+                 html: {id: "ommyo-guest-new-form-form"}) do |f| %>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+      <%= f.label :email %>
+      <%= f.email_field :email, :autofocus => true %>
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
 
-<%= render "users/shared/links" %>
+      <% if devise_mapping.rememberable? -%>
+        <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+      <% end -%>
+
+      <div id="ommyo-guest-new-form-submit-container">
+        <%= f.submit "Sign in",
+                     id: "ommyo-guest-new-form-submit",
+                     class: "btn btn-large btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
