@@ -1,0 +1,29 @@
+/*
+ *= require_self
+ */
+
+#ommyo-guest-body {
+  background-color: #00bdff;
+  color: #fff;
+}
+
+#ommyo-guest-footer {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 150px;
+  color: #000;
+}
+
+#ommyo-guest-footer ul {
+  margin: 0;
+  display: inline;
+}
+
+#ommyo-guest-footer ul li {
+  display: inline;
+  color: #fff;
+}
+
+#ommyo-guest-footer ul li a {
+  color: #fff;
+}

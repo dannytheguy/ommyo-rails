@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OmmYo</title>
+  <%= stylesheet_link_tag    "guest", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "guest", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="ommyo-guest-body">
+  <div class="container">
+    <div class="row">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+<%= yield %>
+
+    </div>
+    <div id="ommyo-guest-footer">
+      <span>OmmYo © 2013</span>
+      <ul>
+        <li><a href="#">Development Blog</a></li>
+        <li> &bull; </li>
+        <li><a href="#">Terms</a></li>
+        <li> &bull; </li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
