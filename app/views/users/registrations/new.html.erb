@@ -12,7 +12,7 @@
     <h3 id="ommyo-guest-new-form-subtitle">it's free.</h2>
     <br>
     <span class="pull-left">Already have an account?</span>
-    <span class="pull-right">Log in</span>
+    <span class="pull-right"><%= link_to('Log in', new_user_session_path) %></span>
     <br>
     <%= form_for(resource,
                  as: resource_name,

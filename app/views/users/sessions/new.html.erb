@@ -11,7 +11,7 @@
     <h2 id="ommyo-guest-new-form-title">Sign In</h2>
     <br>
     <span class="pull-left">New user?</span>
-    <span class="pull-right">Sign up</span>
+    <span class="pull-right"><%= link_to('Sign up', new_user_registration_path) %></span>
     <br>
     <%= form_for(resource,
                  as: resource_name,
