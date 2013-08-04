@@ -12,7 +12,7 @@ OmmYo::Application.routes.draw do
     get 'sign_in' => 'devise/sessions#new', :as => :new_user_session
     post 'sign_in' => 'devise/sessions#create', :as => :user_session
     match 'sign_out' => 'devise/sessions#destroy', :as => :destroy_user_session,
-      :via => Devise.mappings[:user].sign_out_via
+      :via => [:get, Devise.mappings[:user].sign_out_via]
 
     get 'users/cancel' => 'devise/registrations#cancel', :as => :cancel_user_registration
     post 'sign_up' => 'devise/registrations#create', :as => :user_registration
