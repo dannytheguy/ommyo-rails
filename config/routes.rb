@@ -5,7 +5,7 @@ OmmYo::Application.routes.draw do
 
   resources :omms, :only => [:show, :index, :new, :create]
 
-  resources :brands, :only => [:show]
+  resources :brands, :only => [:index]
 
   devise_for :users, :skip => [:sessions, :registrations]
   devise_scope :user do
