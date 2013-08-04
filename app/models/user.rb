@@ -3,4 +3,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
   before_save :ensure_authentication_token
   has_many :omms, :dependent => :destroy
+
+  def name
+    email
+  end
 end
