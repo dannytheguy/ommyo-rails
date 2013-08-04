@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OmmYo</title>
+  <%= stylesheet_link_tag    "member", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "member", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="ommyo-member-body">
+  <div class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand"><%= image_tag "logo.png" %></a>
+        <nav>
+          <ul class="nav">
+            <li><%= link_to "My Omms", current_user %></li>
+            <li><%= link_to "All Omms", omms_path %></li>
+          </ul>
+          <ul class="nav pull-right">
+            <li><%= link_to "Log out", destroy_user_session_path, method: "delete" %></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3">
+        <div class="ommyo-member-content">
+          <div class="ommyo-member-content-element ommyo-member-content-header">
+            <h2><%= current_user.username %></h2>
+          </div>
+          <div class="ommyo-member-content-element">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </div>
+          <div class="ommyo-member-content-element">
+            <div class="ommyo-member-sidebar-footer">
+              OmmYo © 2013<br>
+              <ul>
+                <li><%= link_to "Development Blog", "//blog.ommyo.com" %></li>
+                <li> &bull; </li>
+                <li><%= link_to "Facebook", "#" %></li>
+                <li> &bull; </li>
+                <li><%= link_to "Twitter", "#" %></li>
+                <li> &bull; </li>
+                <li><%= link_to "About", "#" %></li>
+                <li> &bull; </li>
+                <li><%= link_to "Privacy & Terms", "#" %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="span9">
+        <% if notice %><p class="notice"><%= notice %></p><% end %>
+        <% if alert %><p class="alert"><%= alert %></p><% end %>
+
+<%= yield %>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
