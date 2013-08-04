@@ -122,7 +122,7 @@ ActiveAdmin.setup do |config|
   # You can add before, after and around filters to all of your
   # Active Admin resources and pages from here.
   #
-  # config.before_filter :do_something_awesome
+  config.skip_before_filter :authenticate_user!
   
   
   # == Setting a Favicon
