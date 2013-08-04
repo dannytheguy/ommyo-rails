@@ -4,6 +4,8 @@ class Omm < ActiveRecord::Base
   belongs_to :brand
   validates :brand, presence: true
 
+  default_scope -> { order('created_at DESC') }
+
   attr_accessor :recaptcha_challenge_field
   attr_accessor :recaptcha_response_field
   validate :recaptcha_presence
