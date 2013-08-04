@@ -4,18 +4,9 @@ class Omm < ActiveRecord::Base
   belongs_to :brand
   validates :brand, presence: true
 
+  has_many :messages, inverse_of: :omm
+  accepts_nested_attributes_for :messages
+  validates :messages, presence: true
+
   default_scope -> { order('created_at DESC') }
-
-  attr_accessor :recaptcha_challenge_field
-  attr_accessor :recaptcha_response_field
-  validate :recaptcha_presence
-
-  def recaptcha_presence
-    if brand.recaptcha_public_key
-      if @recaptcha_challenge_field.blank? || @recaptcha_response_field.blank?
-        errors.add(:recaptcha_public_key, brand.recaptcha_public_key)
-        errors.add(:recaptcha_challenge_field, brand.recaptcha_challenge_field)
-      end
-    end
-  end
 end

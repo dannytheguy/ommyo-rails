@@ -12,21 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_field :body %>
-  </div>
-  <div class="field">
     <%= f.label :brand_id %><br>
     <%= f.text_field :brand_id %>
   </div>
-  <div class="field">
-    <%= f.label :recaptcha_challenge_field %><br>
-    <%= f.text_field :recaptcha_challenge_field %>
-  </div>
-  <div class="field">
-    <%= f.label :recaptcha_response_field %><br>
-    <%= f.text_field :recaptcha_response_field %>
-  </div>
+  <%= fields_for :message do |m| %>
+    <div class="field">
+      <%= m.label :text %>
+      <%= m.text_area :text %>
+    </div>
+    <div class="field">
+      <%= m.label :recaptcha_challenge_field %><br>
+      <%= m.text_field :recaptcha_challenge_field %>
+    </div>
+    <div class="field">
+      <%= m.label :recaptcha_response_field %><br>
+      <%= m.text_field :recaptcha_response_field %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

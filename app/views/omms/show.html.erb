@@ -1,4 +1,5 @@
 <p>
-  <strong>Body:</strong>
-  <%= @omm.body %>
+  <% @omm.messages.each do |message| %>
+    <%= message.text %>
+  <% end %>
 </p>

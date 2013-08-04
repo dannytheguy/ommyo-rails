@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130803215921) do
+ActiveRecord::Schema.define(version: 20130804012257) do
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -33,8 +33,15 @@ ActiveRecord::Schema.define(version: 20130803215921) do
     t.string   "recaptcha_public_key"
   end
 
+  create_table "messages", force: true do |t|
+    t.text     "text"
+    t.integer  "omm_id"
+    t.integer  "author_id"
+    t.string   "author_type"
+    t.datetime "created_at"
+  end
+
   create_table "omms", force: true do |t|
-    t.string   "body"
     t.datetime "created_at"
     t.integer  "user_id"
     t.integer  "brand_id"
