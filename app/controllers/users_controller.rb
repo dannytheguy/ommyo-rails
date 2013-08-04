@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def current
-    respond_with(current_user)
+    redirect_to current_user
   end
 
   private
