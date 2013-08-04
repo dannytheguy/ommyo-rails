@@ -1,0 +1,25 @@
+<div class="ommyo-member-content-element">
+  <div class="media">
+    <a class="pull-left" href="#">
+      <%= image_tag(omm.brand.logo.url(:w88h88), :class => "media-object ommyo-member-omm-logo") %>
+    </a>
+    <div class="media-body">
+      <div class="ommyo-member-omm-author"><%= omm.messages.last.author.name %></div>
+      <p class="ommyo-member-omm-excerpt"><% text = omm.messages.last.text %><%= truncated = truncate(text, :length => 150) %></p>
+      <ul class="ommyo-member-omm-tags">
+        <% if 'omm.read?' == false %>
+          <li>Unread</li>
+          <li> &bull; </li>
+        <% else %>
+          <li>Read</li>
+          <li> &bull; </li>
+        <% end %>
+        <% if text != truncated %>
+          <li><%= link_to "Show more", "//blog.ommyo.com" %></li>
+          <li> &bull; </li>
+        <% end %>
+        <li><%= time_ago_in_words(omm.messages.last.created_at) %> ago</li>
+      </ul>
+    </div>
+  </div>
+</div>
