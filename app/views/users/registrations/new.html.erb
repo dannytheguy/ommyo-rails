@@ -22,8 +22,11 @@
       <%= f.label :email %>
       <%= f.email_field :email, :autofocus => true %>
 
-      <div><%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation %></div>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
 
       <p id="ommyo-guest-new-form-explanation">Companies sometimes give custom tailored deals. If that sounds cool, fill in your age and gender.</p>
 
