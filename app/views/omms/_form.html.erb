@@ -1,0 +1,25 @@
+<div class="ommyo-member-content-element">
+  <div id="ommyo-member-form">
+    <p>Compose your Omm</p>
+    <%= form_for(@omm) do |f| %>
+      <% if f.object.errors.any? %>
+        <div id="error_explanation">
+          <div class="alert alert-error">
+            The form contains <%= pluralize(object.errors.count, "error") %>.
+          </div>
+          <ul>
+          <% object.errors.full_messages.each do |msg| %>
+            <li>* <%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      
+      <%= fields_for :message do |m| %>
+        <%= m.text_area :text, placeholder: "Speak your mind!" %>
+      <% end %>
+      <%= f.hidden_field :brand_id %>
+      <%= f.submit "Send", id: "ommyo-member-form-send", disabled: "disabled", class: "btn btn-small pull-right btn-primary" %>
+    <% end %>
+  </div>
+</div>

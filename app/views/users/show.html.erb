@@ -1,0 +1,12 @@
+<div class="ommyo-member-content">
+  <div class="ommyo-member-content-element ommyo-member-content-header">
+    <h2><%= current_user == @user ? "My" : "#{@user.email}'s" %> Omms</h2>
+  </div>
+  <%= render :partial => 'omms/form' if current_user == @user %>
+  <%= render @omms %>
+  <% if @user.omms.empty? %>
+    <div class="ommyo-member-content-element">
+      <div class="text-center"><%= current_user == @user ? "You have" : "#{@user.email} has" %> not yet created any Omms.</div>
+    </div>
+  <% end %>
+</div>
