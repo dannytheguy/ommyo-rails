@@ -4,14 +4,11 @@
  *= require_tree ./guest
  */
 
-body {
-  padding-top: 80px;
-  padding-bottom: 40px;
-}
-
 #ommyo-guest-body {
   background-color: #00bdff;
   color: #fff;
+  padding-top: 80px;
+  padding-bottom: 40px;
 }
 
 #ommyo-guest-footer {

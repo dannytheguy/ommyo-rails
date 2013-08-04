@@ -4,13 +4,10 @@
  *= require_tree ./member
  */
 
-body {
-  padding-top: 80px;
-  padding-bottom: 40px;
-}
-
 #ommyo-member-body {
   background-color: #f7f7f7;
+  padding-top: 80px;
+  padding-bottom: 40px;
 }
 
 .container-fluid {
