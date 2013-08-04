@@ -1,6 +1,8 @@
 class OmmsController < ApplicationController
   respond_to :html, :json
 
+  layout 'member'
+
   before_action :set_omm, only: [:show]
 
   def index

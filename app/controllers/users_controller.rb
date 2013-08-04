@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   respond_to :html, :json
 
+  layout 'member'
+
   before_action :set_user, only: [:show]
 
   def show
