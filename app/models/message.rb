@@ -11,7 +11,7 @@ class Message < ActiveRecord::Base
   validate :recaptcha_presence
 
   def recaptcha_presence
-    if omm.brand.recaptcha_public_key
+    if omm.brand.recaptcha_public_key.present?
       if @recaptcha_challenge_field.blank? || @recaptcha_response_field.blank?
         errors.add(:recaptcha_public_key, omm.brand.recaptcha_public_key)
         errors.add(:recaptcha_challenge_field, omm.brand.recaptcha_challenge_field)
