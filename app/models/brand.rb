@@ -1,6 +1,11 @@
 class Brand < ActiveRecord::Base
   has_many :omms, :dependent => :destroy
 
+  has_attached_file :logo,
+    :path => ":rails_root/public/system/:attachment/:id/:style",
+    :url => "/system/:attachment/:id/:style",
+    :styles => { :w88h88 => "88x88#" }
+
   validate :recaptcha_public_key_validation
 
   def recaptcha_public_key_validation
