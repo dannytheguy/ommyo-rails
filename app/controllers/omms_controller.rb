@@ -21,6 +21,7 @@ class OmmsController < ApplicationController
   end
 
   def create
+    params['omm']['brand_id'] = params['omm']['brand_id'].first
     @omm = current_user.omms.build omm_params
     @omm.messages.build message_params.merge(author_id: @omm.user_id, author_type: 'User')
     @omm.save
