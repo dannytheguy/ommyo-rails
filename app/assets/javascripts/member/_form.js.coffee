@@ -25,3 +25,5 @@ $ ->
            $('input#ommyo-member-form-send').removeAttr('disabled')
          else if $('input#ommyo-member-form-send').attr('disabled') != 'disabled'
            $('input#ommyo-member-form-send').attr('disabled', 'disabled')
+
+      $('textarea#message_text').trigger 'change'
