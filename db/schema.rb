@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130827225555) do
+ActiveRecord::Schema.define(version: 20130902171147) do
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20130827225555) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
     t.string   "email"
+    t.text     "iim"
   end
 
   create_table "messages", force: true do |t|

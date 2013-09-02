@@ -16,6 +16,7 @@ ActiveAdmin.register Brand do
     f.inputs "Brand Details" do
       f.input :name
       f.input :email
+      f.input :iim
       f.input :recaptcha_public_key
       f.input :logo, as: :file, hint: f.template.image_tag(f.object.logo.url(:w88h88))
     end
@@ -24,7 +25,7 @@ ActiveAdmin.register Brand do
 
   controller do
     def permitted_params
-      params.permit brand: [:name, :recaptcha_public_key, :logo, :email]
+      params.permit brand: [:name, :recaptcha_public_key, :logo, :email, :iim]
     end
   end
 end
