@@ -5,6 +5,8 @@ OmmYo::Application.routes.draw do
 
   resources :omms, :only => [:show, :index, :new, :create]
 
+  get 'brand_suggest' => 'brands#new', :as => :new_brand_suggestion
+  post 'brand_suggest' => 'brands#create', :as => :brand_suggestion
   resources :brands, :only => [:index]
 
   devise_for :users, :skip => [:sessions, :registrations]
