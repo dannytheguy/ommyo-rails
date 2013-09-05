@@ -4,6 +4,7 @@
   </div>
   <div class="ommyo-member-content-element">
     <%= image_tag(@omm.brand.logo.url(:w88h88), :class => "ommyo-member-omm-logo", :style => 'display: block; margin-left: auto; margin-right: auto; margin-bottom: 5px;') %>
-    <%= render @omm.messages %>
+    <%= render @messages %>
+    <%= render :partial => 'messages/form' if current_user == @omm.user %>
   </div>
 </div>

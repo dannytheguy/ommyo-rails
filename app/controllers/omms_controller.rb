@@ -11,6 +11,10 @@ class OmmsController < ApplicationController
   end
 
   def show
+    @messages = @omm.messages.paginate(page: params[:page])
+    if current_user == @omm.user
+      @message = @omm.messages.build
+    end
     respond_with(@omm)
   end
 

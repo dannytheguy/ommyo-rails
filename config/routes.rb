@@ -3,6 +3,8 @@ OmmYo::Application.routes.draw do
 
   ActiveAdmin.routes(self)
 
+  resources :messages, :only => [:create]
+
   resources :omms, :only => [:show, :index, :new, :create]
 
   get 'brand_suggest' => 'brands#new', :as => :new_brand_suggestion
