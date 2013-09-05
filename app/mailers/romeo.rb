@@ -1,5 +1,5 @@
 class Romeo
-  def message_imacro(brand, message)
+  def initial_message(brand, message)
     @brand = brand
     @message = message
 

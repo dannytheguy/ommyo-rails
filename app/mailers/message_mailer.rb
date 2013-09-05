@@ -1,5 +1,5 @@
 class MessageMailer < ActionMailer::Base
-  def message_email(brand, message)
+  def initial_message(brand, message)
     @brand = brand
     @message = message
 

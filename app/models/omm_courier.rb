@@ -3,11 +3,11 @@ class OmmCourier < ActiveRecord::Observer
 
   def after_save(message)
     if message.omm.brand.email.present?
-      MessageMailer.message_email(message.omm.brand, message).deliver
+      MessageMailer.initial_message(message.omm.brand, message).deliver
     end
 
     if message.omm.brand.iim.present?
-      Romeo.new.message_imacro(message.omm.brand, message).deliver
+      Romeo.new.initial_message(message.omm.brand, message).deliver
     end
   end
 end
