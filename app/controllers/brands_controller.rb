@@ -12,6 +12,6 @@ class BrandsController < ApplicationController
   end
 
   def create
-    redirect_to omms_path, flash: { success: 'Thanks!' }
+    redirect_to omms_path, flash: { success: "Thanks, #{ params[:name] } has been added to our to-do list!" }
   end
 end
