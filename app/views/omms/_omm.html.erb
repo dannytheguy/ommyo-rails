@@ -14,8 +14,8 @@
           <li>Read</li>
           <li> &bull; </li>
         <% end %>
-        <% if text != truncated %>
-          <li><%= link_to "Show more", "//blog.ommyo.com" %></li>
+        <% if text != truncated || omm.messages.count > 1 %>
+          <li><%= link_to "Show more", omm %></li>
           <li> &bull; </li>
         <% end %>
         <li><%= time_ago_in_words(omm.messages.last.created_at) %> ago</li>
