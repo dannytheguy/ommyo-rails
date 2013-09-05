@@ -20,7 +20,7 @@
         <%= m.text_area :text, placeholder: "Speak your mind!" %>
       <% end %>
       <%= f.submit "Send", id: "ommyo-member-form-send", disabled: "disabled", class: "btn btn-small pull-right btn-primary" %>
-      <div id="ommyo-member-form-brandsuggest" class="pull-left">Brand not detected? <%= link_to 'Let us know about them!', new_brand_suggestion_path %></div>
+      <div id="ommyo-member-form-brandsuggest" class="pull-left">Brand not yet detected? <%= link_to 'Let us know about them!', new_brand_suggestion_path %></div>
     <% end %>
   </div>
 </div>
