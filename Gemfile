@@ -65,3 +65,5 @@ gem 'bootstrap-will_paginate'
 
 gem 'paperclip'
 gem 'aws-sdk', group: [:production]
+
+gem 'griddler'

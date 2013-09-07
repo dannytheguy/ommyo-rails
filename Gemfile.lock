@@ -133,11 +133,15 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    griddler (0.6.1)
+      htmlentities
+      rails (>= 3.2.0)
     has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hashie (2.0.5)
     hike (1.2.3)
+    htmlentities (4.3.1)
     httpauth (0.2.0)
     i18n (0.6.4)
     jquery-rails (3.0.4)
@@ -256,6 +260,7 @@ DEPENDENCIES
   devise
   faraday!
   formtastic!
+  griddler
   inherited_resources!
   jquery-rails
   omniauth
