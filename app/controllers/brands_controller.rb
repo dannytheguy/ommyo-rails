@@ -3,6 +3,13 @@ class BrandsController < ApplicationController
 
   layout 'member'
 
+  before_action :set_brand, only: [:show]
+
+  def show
+    @omms = @brand.omms.paginate(page: params[:page])
+    respond_with(@brand)
+  end
+
   def index
     @brands = Brand.all
     respond_with(@brands)
@@ -14,4 +21,9 @@ class BrandsController < ApplicationController
   def create
     redirect_to omms_path, flash: { success: "Thanks, #{ params[:name] } has been added to our to-do list!" }
   end
+
+  private
+    def set_brand
+      @brand = Brand.find(params[:id])
+    end
 end

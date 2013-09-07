@@ -1,6 +1,6 @@
 <div class="ommyo-member-content">
   <div class="ommyo-member-content-element ommyo-member-content-header">
-    <h2>All Omms</h2>
+    <h2><%= @brand.name %> Omms</h2>
   </div>
-  <%= render partial: 'omms/all_omm', collection: @omms, as: :omm %>
+  <%= render partial: 'omms/brand_omm', collection: @omms, as: :omm %>
 </div>

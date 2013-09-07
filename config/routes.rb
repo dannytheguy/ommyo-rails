@@ -9,7 +9,7 @@ OmmYo::Application.routes.draw do
 
   get 'brand_suggest' => 'brands#new', :as => :new_brand_suggestion
   post 'brand_suggest' => 'brands#create', :as => :brand_suggestion
-  resources :brands, :only => [:index]
+  resources :brands, :only => [:index, :show]
 
   devise_for :users, :skip => [:sessions, :registrations]
   devise_scope :user do

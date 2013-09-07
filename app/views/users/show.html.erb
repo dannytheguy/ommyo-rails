@@ -3,7 +3,7 @@
     <h2><%= current_user == @user ? "My" : "#{@user.email}'s" %> Omms</h2>
   </div>
   <%= render :partial => 'omms/form' if current_user == @user %>
-  <%= render @omms %>
+  <%= render partial: @user == current_user ? 'omms/my_omm' : 'omms/their_omm', collection: @omms, as: :omm %>
   <% if @user.omms.empty? %>
     <div class="ommyo-member-content-element">
       <div class="text-center"><%= current_user == @user ? "You have" : "#{@user.email} has" %> not yet created any Omms.</div>

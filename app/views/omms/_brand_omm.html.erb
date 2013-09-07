@@ -1,0 +1,14 @@
+<div class="ommyo-member-content-element">
+  <div class="media">
+    <span class="pull-left">
+      <%= image_tag(omm.brand.logo.url(:w88h88), :class => "media-object ommyo-member-omm-logo") %>
+    </span>
+    <div class="media-body">
+      <div class="ommyo-member-omm-author"><%= link_to omm.messages.first.author.name, omm.messages.first.author %></div>
+      <p class="ommyo-member-omm-excerpt"><% text = omm.messages.first.text %><%= truncated = truncate(text, :length => 150) %></p>
+      <ul class="ommyo-member-omm-tags">
+        <li><%= time_ago_in_words(omm.messages.first.created_at) %> ago</li>
+      </ul>
+    </div>
+  </div>
+</div>
