@@ -5,7 +5,7 @@
       <div class="ommyo-member-omm-author"><%= omm.messages.last.author.name %></div>
       <p class="ommyo-member-omm-excerpt"><% text = omm.messages.last.text %><%= truncated = truncate(text, :length => 150) %></p>
       <ul class="ommyo-member-omm-tags">
-        <% if 'omm.read?' == false %>
+        <% if omm.unread? %>
           <li>Unread</li>
           <li> &bull; </li>
         <% else %>

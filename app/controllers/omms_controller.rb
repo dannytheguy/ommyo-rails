@@ -12,6 +12,7 @@ class OmmsController < ApplicationController
 
   def show
     render template: 'errors/forbidden', status: :forbidden and return if @omm.user != current_user
+    @omm.update_attributes unread: false if @omm.unread?
     @messages = @omm.messages.paginate(page: params[:page])
     if current_user == @omm.user
       @message = @omm.messages.build

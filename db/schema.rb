@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130902171147) do
+ActiveRecord::Schema.define(version: 20130907024246) do
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20130902171147) do
     t.datetime "created_at"
     t.integer  "user_id"
     t.integer  "brand_id"
+    t.boolean  "unread",     default: false
   end
 
   add_index "omms", ["brand_id"], name: "index_omms_on_brand_id"
