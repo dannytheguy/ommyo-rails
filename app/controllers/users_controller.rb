@@ -11,11 +11,17 @@ class UsersController < ApplicationController
       @omm = Omm.new
       @omm.messages.build
     end
-    respond_with(@user)
   end
 
   def current
-    redirect_to current_user
+    respond_to do |format|
+      format.html { redirect_to current_user }
+      format.json do
+        @user = current_user
+        @omms = current_user.omms.paginate(page: params[:page])
+        render 'show'
+      end
+    end
   end
 
   private
