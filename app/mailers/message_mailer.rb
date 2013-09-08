@@ -3,8 +3,7 @@ class MessageMailer < ActionMailer::Base
     @brand = brand
     @message = message
 
-    mail(from: "OmmYo! <#{@brand.id}_#{@message.omm.id}@mailer.ommyo.com>",
+    mail(from: "OmmYo! <#{ EmailIdentifier.assemble(@brand, @message) }>",
          to: "#{@brand.name} <#{@brand.email}>", subject: "You've been Omm'd!")
-    end
   end
 end
