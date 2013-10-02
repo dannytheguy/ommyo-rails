@@ -48,3 +48,5 @@ end
 
 User.create(email: 'drew@ommyo.com', password: 'password')
 AdminUser.create(email: 'drew@ommyo.com', password: 'password')
+
+Brand.create(name: 'OmmYo_Test', email: 'drew@ommyo.com')
