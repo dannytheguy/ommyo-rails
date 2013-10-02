@@ -7,7 +7,7 @@ class OmmCourier < ActiveRecord::Observer
         MessageMailer.outgoing_message(message.omm.brand, message).deliver
       end
 
-      if message.omm.brand.iim.present?
+      if message.omm.brand_email.blank? && message.omm.brand.iim.present?
         Romeo.new.outgoing_message(message.omm.brand, message).deliver
       end
     end
