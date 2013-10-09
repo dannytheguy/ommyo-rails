@@ -2,5 +2,6 @@
   <div class="ommyo-member-content-element ommyo-member-content-header">
     <h2>All Omms</h2>
   </div>
+  <%= render partial: 'omms/form' %>
   <%= render partial: 'omms/all_omm', collection: @omms, as: :omm %>
 </div>

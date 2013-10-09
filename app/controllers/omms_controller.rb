@@ -7,6 +7,8 @@ class OmmsController < ApplicationController
 
   def index
     @omms = Omm.all
+    @omm = Omm.new
+    @omm.messages.build
     respond_with(@omms)
   end
 
