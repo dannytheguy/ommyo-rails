@@ -6,6 +6,10 @@ class Brand < ActiveRecord::Base
     :url => "/system/:attachment/:id/:style",
     :styles => { :w88h88 => "88x88#" }
 
+  before_save do
+    self.iim = iim.read if iim.is_a? ActionDispatch::Http::UploadedFile
+  end
+
   validate :recaptcha_public_key_validation
 
   def recaptcha_public_key_validation

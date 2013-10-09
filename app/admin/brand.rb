@@ -16,7 +16,7 @@ ActiveAdmin.register Brand do
     f.inputs "Brand Details" do
       f.input :name
       f.input :email
-      f.input :iim
+      f.input :iim, as: :file, hint: f.template.text_area_tag(nil, f.object.iim, id: nil, disabled: true)
       f.input :recaptcha_public_key
       f.input :logo, as: :file, hint: f.template.image_tag(f.object.logo.url(:w88h88))
     end
