@@ -7,6 +7,9 @@ ActiveAdmin.register Brand do
     end
     column :name
     column :email
+    column :iim do |brand|
+      brand.iim.present?.to_s.titlecase
+    end
     column :created_at
     column :updated_at
     default_actions
