@@ -5,6 +5,6 @@ node do |omm|
   { id: omm.id,
     logo: omm.brand.logo.url(:w88h88),
     author: omm.messages.first.author.name,
-    text: truncate(omm.messages.first.text, :length => 150),
+    text: omm.messages.first.text,
     age: time_ago_in_words(omm.messages.first.created_at) + ' ago' }
 end
