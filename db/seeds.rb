@@ -49,4 +49,5 @@ end
 User.create(email: 'drew@ommyo.com', password: 'password')
 AdminUser.create(email: 'drew@ommyo.com', password: 'password')
 
-Brand.create(name: 'OmmYo_Test', email: 'drew@ommyo.com', logo: File.new("#{Rails.root}/db/seeds/ommyo_test.png", 'rb'))
+Brand.create(name: 'Email_Test', email: 'drew@ommyo.com', logo: File.new("#{Rails.root}/db/seeds/email_test.png", 'rb'))
+Brand.create(name: 'IIM_Test', logo: File.new("#{Rails.root}/db/seeds/iim_test.png", 'rb'))
