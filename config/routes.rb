@@ -29,4 +29,7 @@ OmmYo::Application.routes.draw do
 
   get 'users/current'
   resources :users, :only => [:show]
+
+  get 'iim_test' => 'iim_test#get', :as => :get_iim_test
+  post 'iim_test' => 'iim_test#post', :as => :post_iim_test
 end
