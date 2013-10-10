@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131010121649) do
+ActiveRecord::Schema.define(version: 20131010150033) do
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -39,8 +39,10 @@ ActiveRecord::Schema.define(version: 20131010121649) do
     t.text     "iim"
     t.text     "terms",                default: ""
     t.boolean  "hidden",               default: false
+    t.boolean  "disabled",             default: false
   end
 
+  add_index "brands", ["disabled"], name: "index_brands_on_disabled"
   add_index "brands", ["hidden"], name: "index_brands_on_hidden"
 
   create_table "messages", force: true do |t|

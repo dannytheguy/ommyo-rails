@@ -11,7 +11,7 @@ class BrandsController < ApplicationController
   end
 
   def index
-    @brands = Brand.all
+    @brands = Brand.where(disabled: false)
     respond_with(@brands)
   end
 
