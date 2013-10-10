@@ -22,6 +22,8 @@ ActiveAdmin.register Brand do
       f.input :iim, as: :file, hint: f.template.text_area_tag(nil, f.object.iim, id: nil, rows: f.object.iim.to_s.lines.count+1, disabled: true)
       f.input :recaptcha_public_key
       f.input :logo, as: :file, hint: f.template.image_tag(f.object.logo.url(:w88h88))
+      f.input :terms, placeholder: 'Please place each term on a separate line in this textbox; no other separator neccesary (or desired).',
+                      input_html: { style: 'width: 125px; height:: 200px' }
     end
     f.actions
   end
@@ -38,14 +40,28 @@ ActiveAdmin.register Brand do
       row :recaptcha_public_key
       row :email
       row :iim do
-        content_tag 'form', text_area_tag(nil, s.iim, id: nil, rows: s.iim.to_s.lines.count+1, disabled: true)
+        if s.iim.present?
+          content_tag 'form', text_area_tag(nil, s.iim, id: nil, rows: s.iim.to_s.lines.count+1, disabled: true)
+        else
+          span I18n.t('active_admin.empty'), :class => "empty"
+        end
       end
+      row :terms do
+        if s.terms.present?
+          s.terms_array.each do |term|
+            span term, style: 'padding: 5px; font-weight: bold; color: #ffffff; border-radius: 3px; background-color: #5bc0de'
+          end
+        else
+          span I18n.t('active_admin.empty'), :class => "empty"
+        end
+      end
+      
     end
   end
 
   controller do
     def permitted_params
-      params.permit brand: [:name, :recaptcha_public_key, :logo, :email, :iim]
+      params.permit brand: [:name, :recaptcha_public_key, :logo, :email, :iim, :terms]
     end
   end
 end
