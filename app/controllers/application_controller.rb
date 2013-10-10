@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
   prepend_before_action :authenticate_user!
 
   def after_sign_in_path_for(resource)
-    omms_path
+    resource.is_a?(User) ? omms_path : super
   end
 end
