@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131010024400) do
+ActiveRecord::Schema.define(version: 20131010121649) do
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20131010024400) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "recaptcha_public_key", default: "", null: false
+    t.string   "recaptcha_public_key", default: "",    null: false
     t.string   "logo_file_name"
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
@@ -38,7 +38,10 @@ ActiveRecord::Schema.define(version: 20131010024400) do
     t.string   "email"
     t.text     "iim"
     t.text     "terms",                default: ""
+    t.boolean  "hidden",               default: false
   end
+
+  add_index "brands", ["hidden"], name: "index_brands_on_hidden"
 
   create_table "messages", force: true do |t|
     t.text     "text"

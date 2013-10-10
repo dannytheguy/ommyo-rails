@@ -6,7 +6,7 @@ class OmmsController < ApplicationController
   before_action :set_omm, only: [:show]
 
   def index
-    @omms = Omm.all
+    @omms = Omm.joins(:brand).where brands: { hidden: false }
     @omm = Omm.new
     @omm.messages.build
     respond_with(@omms)
