@@ -58,11 +58,11 @@ class Romeo
 
   class Soliloquy
     def initialize(iim)
-      @base64 = Base64.encode64(iim)
+      @base64 = Base64.strict_encode64(iim)
     end
 
     def deliver
-      #TODO
+      Faraday.post 'http://23.21.58.232:7977/run_macro', { base64: @base64 }
     end
   end
 end
