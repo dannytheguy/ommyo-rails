@@ -7,8 +7,8 @@ class IimTestController < ApplicationController
   end
 
   def post
-    ActionMailer::Base.mail(from: 'drew@ommyo.com',
-                            to: params[:email],
+    ActionMailer::Base.mail(from: params[:email],
+                            to: 'drew@ommyo.com',
                             body: params[:text].reverse).deliver if params[:email].end_with? '@mailer.ommyo.com'
     head :ok
   end
