@@ -19,7 +19,10 @@ class Romeo
                       send method
                     end
 
-      dynamic_iim.gsub!("<omm#{tag[0]}>#{tag[1]}</yo>", replacement.to_s)
+      replacement = replacement.to_s
+      replacement.gsub!(' ', '<SP>')
+
+      dynamic_iim.gsub!("<omm#{tag[0]}>#{tag[1]}</yo>", replacement)
     end
 
     dynamic_iim << "\nURL GOTO=about:blank"
