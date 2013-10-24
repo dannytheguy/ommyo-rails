@@ -19,10 +19,15 @@ class Romeo
                       send method
                     end
 
-      replacement = replacement.to_s
-      replacement.gsub!(' ', '<SP>')
+      case replacement
+      when :delete_line
+        dynamic_iim = dynamic_iim.split("\n").delete_if{|line| line.include? "<omm#{tag[0]}>#{tag[1]}</yo>"}.join("\n")
+      else
+        replacement = replacement.to_s
+        replacement.gsub!(' ', '<SP>')
 
-      dynamic_iim.gsub!("<omm#{tag[0]}>#{tag[1]}</yo>", replacement)
+        dynamic_iim.gsub!("<omm#{tag[0]}>#{tag[1]}</yo>", replacement)
+      end
     end
 
     dynamic_iim << "\nURL GOTO=about:blank"
